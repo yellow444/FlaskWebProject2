@@ -1,0 +1,30 @@
+textarea {
+    resize: none;
+    overflow: hidden;
+}
+
+#container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.split {
+    width: 50%;
+    padding-top: 20px;
+}
+
+.left {
+    background-color: white;
+}
+
+.right {
+    background-color: #E0E0E0;
+}
+
+html, body {
+    margin: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
