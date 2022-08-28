@@ -3,6 +3,8 @@ $(document).ready(function () {
     $('#Upload').click(function (e) {
         e.stopPropagation();
         e.preventDefault();
+        var textarea = document.getElementById("usrInput");
+        textarea.style.backgroundColor = "white";
         var form_data = new FormData($('#formdata')[0]);
         if (form_data.getAll('file')[0].name == '') {
             alert('Please Upload File');
