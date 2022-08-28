@@ -31,7 +31,8 @@ columns = list([i for i in range(1,40)])
 
 train_args ={"reprocess_input_data": True,
              "fp16":False,
-             "num_train_epochs": 15}
+             "num_train_epochs": 15,
+             "lazy_loading ": True}
 
 if 'Debug' in os.environ:
     model = ClassificationModel(
