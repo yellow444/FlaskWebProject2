@@ -6,6 +6,7 @@ services:
     environment:
       - FLASK_ENV=development
       - PYTHONUNBUFFERED=True    
+      - PYTHONDONTWRITEBYTECODE=1
     restart: on-failure
     volumes:
       - ./data:/backend
