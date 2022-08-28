@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title style="display:unset"> Классификация нормативных правовых актов </title>
+
+    <link rel="stylesheet" href="/static/content/bootstrap.min.css">
+    <script src="/static/scripts/jquery-1.10.2.js"></script>
+
+    <script src="/static/scripts/respond.js"></script>
+    <script src="/static/scripts/upload.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/content/site.css" />
+    <script src="/static/scripts/modernizr-2.6.2.js"></script>
+</head>
+<body>
+    <!--<div><p style="text-align:center;">
+    <img src="/static/images/pinterest_profile_image.png" style="width:100px;height:auto;text-align:center" >  Классификация нормативных правовых актов<img />
+</p>-->
+    <h1 style="text-align:center">Классификация нормативных правовых актов</h1>
+</div>
+    <div>
+        <!--<label id="msg"> {{ msg }} </label>-->
+
+        <form method="post" enctype="multipart/form-data" id="formdata">
+            <input type="file" name="file" id="file" accept=".docx" />
+            <hr />
+            <input type="submit" value="Upload" id="Upload">
+        </form>
+    </div>
+    <hr />
+    <link rel="stylesheet" href="/static/content/Stylesheet1.css">
+    <div id="container" class="container-fluid">
+
+        <!-- Input row -->
+        <div class="split left">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+                <h3 class="hash-heading">Input</h3>
+                <pre id="usrInput" class="hash-input" style="background-color:white"> </pre>
+                <!--<textarea id="text-input" class="form-control text-input" placeholder="Enter text and see the results..."></textarea>-->
+                <!-- Script handling auto resize of input box -->
+                <script>
+                    var textarea = document.getElementById("usrInput");
+
+                    textarea.oninput = function () {
+                        textarea.style.height = "";
+                        textarea.style.height = Math.min(textarea.scrollHeight) + "px";
+                    };
+                </script>
+            </div>
+        </div>
+
+        <!-- Output row -->
+        <div class="split right">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <h3 class="hash-heading">Output</h3>
+                <pre id="usrOutput" class="hash-output"> </pre>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <hr />
+        <footer style="text-align: right">
+            <p>&copy; {{ year }} - Liberal Python Team </p>
+        </footer>
+    </div>
+</body>
+</html> 

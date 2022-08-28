@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>f4ac0911-a4b1-4a1b-9d85-cd717a11ccbf</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <ProjectTypeGuids>{789894c7-04a9-4a11-a6b5-3f4435165112};{1b580a1a-fdb3-4b32-83e1-6407eb2722e6};{349c5851-65df-11da-9384-00065b846f21};{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <StartupFile>runserver.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <LaunchProvider>Web launcher</LaunchProvider>
+    <WebBrowserUrl>http://localhost</WebBrowserUrl>
+    <OutputPath>.</OutputPath>
+    <SuppressCollectPythonCloudServiceFiles>true</SuppressCollectPythonCloudServiceFiles>
+    <Name>LiberalPython</Name>
+    <RootNamespace>LiberalPython</RootNamespace>
+    <WebBrowserPort>5000</WebBrowserPort>
+    <PythonRunWebServerCommandEnvironment>
+    </PythonRunWebServerCommandEnvironment>
+    <PythonDebugWebServerCommandEnvironment>Debug=1</PythonDebugWebServerCommandEnvironment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="runserver.py" />
+    <Compile Include="LiberalPython\__init__.py" />
+    <Compile Include="LiberalPython\views.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="LiberalPython\" />
+    <Folder Include="LiberalPython\static\" />
+    <Folder Include="LiberalPython\static\content\" />
+    <Folder Include="LiberalPython\static\fonts\" />
+    <Folder Include="LiberalPython\static\images\" />
+    <Folder Include="LiberalPython\static\scripts\" />
+    <Folder Include="LiberalPython\templates\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="LiberalPython\Dockerfile" />
+    <Content Include="LiberalPython\favicon.png" />
+    <Content Include="LiberalPython\static\images\facebook_cover_photo_1.png" />
+    <Content Include="LiberalPython\static\images\facebook_cover_photo_2.png" />
+    <Content Include="LiberalPython\static\images\facebook_profile_image.png" />
+    <Content Include="LiberalPython\static\images\favicon.png" />
+    <Content Include="LiberalPython\static\images\instagram_profile_image.png" />
+    <Content Include="LiberalPython\static\images\linkedin_banner_image_1.png" />
+    <Content Include="LiberalPython\static\images\linkedin_banner_image_2.png" />
+    <Content Include="LiberalPython\static\images\linkedin_profile_image.png" />
+    <Content Include="LiberalPython\static\images\logo.png" />
+    <Content Include="LiberalPython\static\images\logo_transparent.png" />
+    <Content Include="LiberalPython\static\images\pinterest_board_photo.png" />
+    <Content Include="LiberalPython\static\images\pinterest_profile_image.png" />
+    <Content Include="LiberalPython\static\images\twitter_header_photo_1.png" />
+    <Content Include="LiberalPython\static\images\twitter_header_photo_2.png" />
+    <Content Include="LiberalPython\static\images\twitter_profile_image.png" />
+    <Content Include="LiberalPython\static\images\youtube_profile_image.png" />
+    <Content Include="LiberalPython\static\scripts\upload.js" />
+    <Content Include="LiberalPython\templates\favicon.png" />
+    <Content Include="LiberalPython\templates\upload.html" />
+    <Content Include="requirements.txt" />
+    <Content Include="LiberalPython\static\content\bootstrap.css" />
+    <Content Include="LiberalPython\static\content\bootstrap.min.css" />
+    <Content Include="LiberalPython\static\content\site.css" />
+    <Content Include="LiberalPython\static\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="LiberalPython\static\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="LiberalPython\static\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="LiberalPython\static\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="LiberalPython\static\scripts\bootstrap.js" />
+    <Content Include="LiberalPython\static\scripts\bootstrap.min.js" />
+    <Content Include="LiberalPython\static\scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="LiberalPython\static\scripts\jquery-1.10.2.js" />
+    <Content Include="LiberalPython\static\scripts\jquery-1.10.2.min.js" />
+    <Content Include="LiberalPython\static\scripts\jquery-1.10.2.min.map" />
+    <Content Include="LiberalPython\static\scripts\jquery.validate-vsdoc.js" />
+    <Content Include="LiberalPython\static\scripts\jquery.validate.js" />
+    <Content Include="LiberalPython\static\scripts\jquery.validate.min.js" />
+    <Content Include="LiberalPython\static\scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="LiberalPython\static\scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="LiberalPython\static\scripts\modernizr-2.6.2.js" />
+    <Content Include="LiberalPython\static\scripts\respond.js" />
+    <Content Include="LiberalPython\static\scripts\respond.min.js" />
+    <Content Include="LiberalPython\static\scripts\_references.js" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Web.targets" />
+  <!-- Specify pre- and post-build commands in the BeforeBuild and 
+       AfterBuild targets below. -->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <AutoAssignPort>True</AutoAssignPort>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
