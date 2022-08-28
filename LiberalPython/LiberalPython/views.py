@@ -83,5 +83,5 @@ def getText(filename):
 
 
 def DoWork (text):
-    predictions, raw_outputs = model.predict(text[150:170])
+    predictions, raw_outputs = model.predict(text)
     return predictions

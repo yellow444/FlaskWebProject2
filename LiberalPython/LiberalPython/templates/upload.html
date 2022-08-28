@@ -1,6 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <style>
+        body {
+            background: #555;
+        }
+
+        .content {
+            max-width: 500px;
+            margin: auto;
+            background: white;
+            padding: 10px;
+        }
+    </style>
     <meta charset="UTF-8">
     <title style="display:unset"> Классификация нормативных правовых актов </title>
 
@@ -12,7 +24,7 @@
     <link rel="stylesheet" type="text/css" href="/static/content/site.css" />
     <script src="/static/scripts/modernizr-2.6.2.js"></script>
 </head>
-<body>
+<body style="max-width: 1200px; margin: auto;">
     <!--<div><p style="text-align:center;">
     <img src="/static/images/pinterest_profile_image.png" style="width:100px;height:auto;text-align:center" >  Классификация нормативных правовых актов<img />
 </p>-->
@@ -34,7 +46,7 @@
         <!-- Input row -->
         <div class="split left">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
-                <h3 class="hash-heading">Input</h3>
+                <h3 class="hash-heading">Присутствующие классы</h3>
                 <pre id="usrInput" class="hash-input" style="background-color:white"> </pre>
                 <!--<textarea id="text-input" class="form-control text-input" placeholder="Enter text and see the results..."></textarea>-->
                 <!-- Script handling auto resize of input box -->
@@ -52,7 +64,7 @@
         <!-- Output row -->
         <div class="split right">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <h3 class="hash-heading">Output</h3>
+                <h3 class="hash-heading">Недостающие классы</h3>
                 <pre id="usrOutput" class="hash-output"> </pre>
             </div>
         </div>

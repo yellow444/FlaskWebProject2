@@ -17,7 +17,7 @@
     <SuppressCollectPythonCloudServiceFiles>true</SuppressCollectPythonCloudServiceFiles>
     <Name>LiberalPython</Name>
     <RootNamespace>LiberalPython</RootNamespace>
-    <WebBrowserPort>5000</WebBrowserPort>
+    <WebBrowserPort>80</WebBrowserPort>
     <PythonRunWebServerCommandEnvironment>
     </PythonRunWebServerCommandEnvironment>
     <PythonDebugWebServerCommandEnvironment>Debug=1</PythonDebugWebServerCommandEnvironment>
