@@ -13,7 +13,39 @@ from simpletransformers.classification import ClassificationModel
 from sklearn.model_selection import train_test_split
 from collections import OrderedDict
 
+model = None
+columns = list([i for i in range(1,40)])
 
+train_args ={"reprocess_input_data": True,
+             "fp16":False,
+             "num_train_epochs": 15,
+             "lazy_loading ": True,
+             "use_multiprocessing": False}
+def get_model():
+    global model
+    if model is None:
+        if 'Debug' in os.environ:
+            model = ClassificationModel(
+            'bert', 'C:\\Users\\yello\\source\\repos\\yellow444\\LiberalPython\\LiberalPython\\LiberalPython\\LiberalPython\\content\\outputs\\checkpoint-32070-epoch-15\\',
+            num_labels=39,
+            args=train_args,
+            use_cuda=False
+        )
+        else:
+            model = ClassificationModel(
+            'bert', '/content/outputs/checkpoint-32070-epoch-15/',
+            num_labels=39,
+            args=train_args,
+            use_cuda=False
+        )
+    return model
+
+# get_model()  # If you un-comment this line, the model will be created before the workers are spawned. If you leave it commented, it will be created the first time `predict` is invoked
+
+def predict(text):
+    cl_model = get_model()
+    predictions, raw_outputs = cl_model.predict([text])
+    # here goes your handling of the output
 
 #train_args ={'reprocess_input_data': True,
 #             'fp16':False,
@@ -27,27 +59,9 @@ from collections import OrderedDict
 #    use_cuda=False,cache_dir=os.path.join(app.config['CONTENT_FOLDER'] ,'/outputs/checkpoint-32070-epoch-15')
 #)
 
-columns = list([i for i in range(1,40)])
 
-train_args ={"reprocess_input_data": True,
-             "fp16":False,
-             "num_train_epochs": 15,
-             "lazy_loading ": True}
 
-if 'Debug' in os.environ:
-    model = ClassificationModel(
-    'bert', 'C:\\Users\\yello\\source\\repos\\yellow444\\LiberalPython\\LiberalPython\\LiberalPython\\LiberalPython\\content\\outputs\\checkpoint-32070-epoch-15\\',
-    num_labels=39,
-    args=train_args,
-    use_cuda=False
-)
-else:
-    model = ClassificationModel(
-    'bert', '/content/outputs/checkpoint-32070-epoch-15/',
-    num_labels=39,
-    args=train_args,
-    use_cuda=False
-)
+
 
 
 @app.route('/favicon.ico') 
@@ -83,5 +97,6 @@ def getText(filename):
 
 
 def DoWork (text):
-    predictions, raw_outputs = model.predict(text)
+    cl_model = get_model()
+    predictions, raw_outputs = cl_model.predict(text)
     return predictions
