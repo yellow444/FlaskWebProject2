@@ -8,3 +8,5 @@ pip==20.1.1
 python-docx==0.8.11
 setuptools==47.1.0
 Werkzeug==1.0.1
+simpletransformers
+scikit-learn

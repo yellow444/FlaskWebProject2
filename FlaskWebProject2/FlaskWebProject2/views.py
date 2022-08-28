@@ -9,6 +9,34 @@ from werkzeug.utils import secure_filename
 import os.path
 from os import path
 import os  
+from simpletransformers.classification import ClassificationModel
+from sklearn.model_selection import train_test_split
+
+
+
+#train_args ={'reprocess_input_data': True,
+#             'fp16':False,
+#             'num_train_epochs': 15}
+
+
+#model = ClassificationModel(
+#    'bert',model_name='checkpoint-32070-epoch-15',
+#    num_labels=39,
+#    args=train_args,
+#    use_cuda=False,cache_dir=os.path.join(app.config['CONTENT_FOLDER'] ,'/outputs/checkpoint-32070-epoch-15')
+#)
+
+train_args ={"reprocess_input_data": True,
+             "fp16":False,
+             "num_train_epochs": 15}
+
+
+model = ClassificationModel(
+    "bert", "/content/outputs/checkpoint-32070-epoch-15",
+    num_labels=39,
+    args=train_args,
+    use_cuda=False
+)
 
 @app.route('/favicon.ico') 
 def favicon(): 
@@ -23,8 +51,8 @@ def upload():
         f.save(os.path.join(app.config['UPLOAD_FOLDER'],filename))
         #msg = f.filename
         usrInput = getText(os.path.join(app.config['UPLOAD_FOLDER'],filename))
-        usrOutput = ''
-        return jsonify(usrInput=usrInput,usrOutput=usrOutput)
+        usrOutput = DoWork(usrInput)
+        return jsonify(usrInput=usrInput[101:110],usrOutput=usrOutput)
     return render_template('upload.html',year = datetime.utcnow().year)
   
 def getText(filename):
@@ -32,4 +60,9 @@ def getText(filename):
     fullText = []
     for para in doc.paragraphs:
         fullText.append(para.text)
-    return '\n'.join(fullText)
+    return fullText
+
+
+def DoWork (text):
+    predictions, raw_outputs = model.predict(text[101:110])
+    return predictions
